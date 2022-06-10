@@ -1,15 +1,17 @@
 // File: /packages/my-first-theme/src/components/index.js
 
 import React from 'react'
-import { connect, Global, css } from 'frontity'
+import { connect, Global, css} from 'frontity'
 import { Header, HeaderContent, Main } from '../styles/Header'
 import Menu from '../styles/Menu'
 import Button from '../styles/Button'
 
 import Link from '@frontity/components/link'
+import Loading from './loading'
 import List from './list'
 import Post from './post'
 import Page from './page'
+import Error from './error'
 
 import Switch from '@frontity/components/switch'
 
@@ -40,9 +42,7 @@ const Root = ({ state, actions }) => {
           ) : null}
           <Menu>
             <Link link='/'>Home</Link>
-            <br />
-            <Link link='/page/2'>More posts</Link>
-            <br />
+            <Link link="/destinations">Destinations</Link>
             <Link link='/about-us'>About Us</Link>
           </Menu>
         </HeaderContent>
@@ -50,13 +50,15 @@ const Root = ({ state, actions }) => {
       <hr />
       <Main>
         <Switch>
+        <Loading when={data.isFetching} />
           <List when={data.isArchive} />
           <Post when={data.isPost} />
           <Page when={data.isPage} />
+          <Page when={data.isDestinations} />
+          <Error when={data.isError} />
         </Switch>
       </Main>
-      <Menu>
-        
+      <Menu>        
           {state.theme.isUrlVisible ? (
             <>
               Current URL: {state.router.link}{' '}

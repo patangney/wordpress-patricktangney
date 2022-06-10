@@ -1,6 +1,7 @@
 // File: /packages/CreativeIpsum/src/index.js
 
 import Root from './components'
+import link from '@frontity/html2react/processors/link'
 
 const myFirstTheme = {
   name: 'CreativeIpsum',
@@ -17,6 +18,11 @@ const myFirstTheme = {
       toggleUrl: ({ state }) => {
         state.theme.isUrlVisible = !state.theme.isUrlVisible
       }
+    }
+  },
+  libraries: {
+    html2react: {
+      processors: [link]
     }
   }
 }
