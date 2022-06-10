@@ -16,13 +16,7 @@ const settings = {
       "state": {
         "source": {
           "url": "https://blog.patangney.com/",
-          "postTypes": [
-            {
-              type: "destinations",
-              endpoint: "destinations",
-              archive: "/destinations"
-            }
-          ]
+          
         }
       }
     },

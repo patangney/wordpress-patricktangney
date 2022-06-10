@@ -42,7 +42,7 @@ const Root = ({ state, actions }) => {
           ) : null}
           <Menu>
             <Link link='/'>Home</Link>
-            <Link link="/destinations">Destinations</Link>
+            <Link link="/sample-page">Destinations</Link>
             <Link link='/about-us'>About Us</Link>
           </Menu>
         </HeaderContent>
