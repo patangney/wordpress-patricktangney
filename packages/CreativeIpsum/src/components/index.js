@@ -30,10 +30,10 @@ const Root = ({ state }) => {
           }
         `}
       />
-      <Header>
+      <Header isPostType={data.isPostType} isPage={data.isPage}>
           <HeaderContent>
         <h1>Hello Frontity</h1>
-        <p>Current URL: {state.router.link}</p>
+        { state.theme.isUrlVisible ? <p>Current URL: {state.router.link}</p> : null }
         <Menu>
           <Link link='/'>Home</Link>
           <br />

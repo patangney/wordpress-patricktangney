@@ -3,6 +3,7 @@
 import React from 'react'
 import { connect } from 'frontity'
 import dayjs from 'dayjs'
+import PostInfo from './../styles/PostInfo';
 
 const Post = ({ state }) => {
   const data = state.source.get(state.router.link)
@@ -13,6 +14,7 @@ const Post = ({ state }) => {
   return (
     <div>
       <h2>{post.title.rendered}</h2>
+      <PostInfo>
       <p>
         <strong>Posted: </strong>
         {formattedDate}
@@ -21,6 +23,7 @@ const Post = ({ state }) => {
         <strong>Author: </strong>
         {author.name}
       </p>
+      </PostInfo>
       <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
     </div>
   )

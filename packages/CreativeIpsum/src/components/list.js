@@ -1,12 +1,14 @@
 import React from 'react'
 import { connect } from 'frontity'
+import Items from './../styles/Items';
 import Link from '@frontity/components/link'
+
 
 const List = ({ state }) => {
   const data = state.source.get(state.router.link)
 
   return (
-    <div>
+    <Items>
       {data.items.map(item => {
         const post = state.source[item.type][item.id]
         return (
@@ -16,7 +18,7 @@ const List = ({ state }) => {
           </Link>
         )
       })}
-    </div>
+    </Items>
   )
 }
 

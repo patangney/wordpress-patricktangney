@@ -1,14 +1,12 @@
 import { styled } from 'frontity'
 
+
+
 const Header = styled.header`
   background-color: #e5edee;
   border-width: 0 0 8px 0;
   border-style: solid;
-  border-color: maroon;
-
-  h1 {
-    color: #4a4a4a;
-  }
+  border-color: ${ props => props.isPostType ? ( props.isPage ? 'lightsteelblue' : 'lightseagreen' ) : 'maroon'};
 `
 const HeaderContent = styled.div`
   max-width: 800px;

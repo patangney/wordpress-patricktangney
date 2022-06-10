@@ -8,7 +8,9 @@ const myFirstTheme = {
     theme: Root
   },
   state: {
-    theme: {}
+    theme: {
+      isUrlVisible: false
+    }
   },
   actions: {
     theme: {}
