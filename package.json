@@ -24,6 +24,7 @@
     "@frontity/tiny-router": "^1.4.4",
     "@frontity/wp-source": "^1.11.7",
     "CreativeIpsum": "file:packages/CreativeIpsum",
+    "dayjs": "^1.11.3",
     "frontity": "^1.17.2"
   }
 }
