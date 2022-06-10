@@ -1,10 +1,10 @@
 import React from 'react'
-import { connect } from 'frontity'
-import Items from './../styles/Items';
+import { connect  } from 'frontity'
+import {Items, PrevNextNav} from './../styles/Items';
 import Link from '@frontity/components/link'
 
 
-const List = ({ state }) => {
+const List = ({ state, actions }) => {
   const data = state.source.get(state.router.link)
 
   return (
@@ -18,6 +18,26 @@ const List = ({ state }) => {
           </Link>
         )
       })}
+    <PrevNextNav>
+        {data.previous && (
+          <button
+            onClick={() => {
+              actions.router.set(data.previous)
+            }}
+          >
+            &#171; Prev
+          </button>
+        )}
+        {data.next && (
+          <button
+            onClick={() => {
+              actions.router.set(data.next)
+            }}
+          >
+            Next &#187;
+          </button>
+        )}
+      </PrevNextNav>
     </Items>
   )
 }

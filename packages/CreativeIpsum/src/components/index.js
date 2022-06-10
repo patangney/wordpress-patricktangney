@@ -2,8 +2,9 @@
 
 import React from 'react'
 import { connect, Global, css } from 'frontity'
-import {Header, HeaderContent, Main} from '../styles/Header'
+import { Header, HeaderContent, Main } from '../styles/Header'
 import Menu from '../styles/Menu'
+import Button from '../styles/Button'
 
 import Link from '@frontity/components/link'
 import List from './list'
@@ -12,7 +13,7 @@ import Page from './page'
 
 import Switch from '@frontity/components/switch'
 
-const Root = ({ state }) => {
+const Root = ({ state, actions }) => {
   const data = state.source.get(state.router.link)
 
   return (
@@ -30,17 +31,20 @@ const Root = ({ state }) => {
           }
         `}
       />
+
       <Header isPostType={data.isPostType} isPage={data.isPage}>
-          <HeaderContent>
-        <h1>Hello Frontity</h1>
-        { state.theme.isUrlVisible ? <p>Current URL: {state.router.link}</p> : null }
-        <Menu>
-          <Link link='/'>Home</Link>
-          <br />
-          <Link link='/page/2'>More posts</Link>
-          <br />
-          <Link link='/about-us'>About Us</Link>
-        </Menu>
+        <HeaderContent>
+          <h1>Hello Frontity</h1>
+          {state.theme.isUrlVisible ? (
+            <p>Current URL: {state.router.link}</p>
+          ) : null}
+          <Menu>
+            <Link link='/'>Home</Link>
+            <br />
+            <Link link='/page/2'>More posts</Link>
+            <br />
+            <Link link='/about-us'>About Us</Link>
+          </Menu>
         </HeaderContent>
       </Header>
       <hr />
@@ -51,6 +55,18 @@ const Root = ({ state }) => {
           <Page when={data.isPage} />
         </Switch>
       </Main>
+      <Menu>
+        
+          {state.theme.isUrlVisible ? (
+            <>
+              Current URL: {state.router.link}{' '}
+              <Button onClick={actions.theme.toggleUrl}>&#x3c; Hide URL</Button>
+            </>
+          ) : (
+            <Button onClick={actions.theme.toggleUrl}>Show URL &#x3e;</Button>
+          )}
+        
+      </Menu>
     </>
   )
 }

@@ -13,7 +13,11 @@ const myFirstTheme = {
     }
   },
   actions: {
-    theme: {}
+    theme: {
+      toggleUrl: ({ state }) => {
+        state.theme.isUrlVisible = !state.theme.isUrlVisible
+      }
+    }
   }
 }
 
