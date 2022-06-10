@@ -2,6 +2,7 @@
 
 import React from "react"
 import { connect } from "frontity" 
+import SEO from './shared/SEO'
 
 const Page = ({ state, libraries  }) => {
   const data = state.source.get(state.router.link)
@@ -9,10 +10,13 @@ const Page = ({ state, libraries  }) => {
   const Html2React = libraries.html2react.Component
 
   return (
+    <>
+    <SEO />
     <div>
       <h2>{page.title.rendered}</h2>
       <Html2React html={page.content.rendered} />
     </div>
+    </>
   )
 }
 

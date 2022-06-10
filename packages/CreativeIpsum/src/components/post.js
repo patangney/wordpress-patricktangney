@@ -1,7 +1,7 @@
 // File: /packages/my-first-theme/src/components/post.js
 
 import React from 'react'
-import { connect, Head } from 'frontity'
+import { connect } from 'frontity'
 import SEO from './shared/SEO'
 import dayjs from 'dayjs'
 import PostInfo from './../styles/PostInfo'
