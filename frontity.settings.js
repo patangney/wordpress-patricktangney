@@ -15,7 +15,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://patangney.com",
+          "url": "http://patangney.com",
           "postTypes": [
             {
               type: "destinations",
