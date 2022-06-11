@@ -2,9 +2,9 @@ const settings = {
   "name": "wordpress-patricktangney",
   "state": {
     "frontity": {
-      "url": "https://test.frontity.org",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
+      "url": "https://blog.patangney.com/",
+      "title": "Test Blog",
+      "description": "Test Blog"
     }
   },
   "packages": [
